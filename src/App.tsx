@@ -40,6 +40,28 @@ function App() {
             </div>
           </div>
         </Section>
+        <Section className='best'>
+          <div className='img-ticker'></div>
+          <div className='cell'>
+            <div className='title__container'>
+              <p className='title__desc'>지금 뜨는 베스트</p>
+              <h2 className='title__text'>Best</h2>
+            </div>
+            <ul className='cate'>
+              <li className='cate__item'>
+                <button className='cate__btn'>Mobile</button>
+                <button className='cate__btn'>Life</button>
+                <button className='cate__btn'>Digital</button>
+              </li>
+            </ul>
+          </div>
+        </Section>
+        <Section className='event'>
+          <div className='title__container'>
+            <p className='title__desc'>티다문구점 이벤트</p>
+            <h2 className='title__text'>Event</h2>
+          </div>
+        </Section>
       </main>
     </div>
   );
