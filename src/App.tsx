@@ -57,12 +57,53 @@ function App() {
           </div>
         </Section>
         <Section className='event'>
-          <div className='title__container'>
-            <p className='title__desc'>티다문구점 이벤트</p>
-            <h2 className='title__text'>Event</h2>
+          <div className='event__banner'>
+            <p className='event__banner-title'>Digital life T gift zone</p>
+          </div>
+          <div className='event__banner'>
+            <p className='event__banner-title'>Ready for the cool summer</p>
+          </div>
+          <div className='event__banner'>
+            <div className='title__container'>
+              <p className='title__desc'>티다문구점 이벤트</p>
+              <h2 className='title__text'>Event</h2>
+            </div>
           </div>
         </Section>
+        <Section className='new'>
+          <div className=''></div>
+        </Section>
       </main>
+      <footer className='footer' id='footer'>
+        <div className='footer__inner'>
+          <div className='footer__row'>
+            <div className='footer__cell'>
+              <ul className='footer__link'>
+                <li className='footer__link-item'>
+                  <a href='#'>상품구매약관</a>
+                </li>
+                <li className='footer__link-item'>
+                  <a href='#'>개인정보처리방침</a>
+                </li>
+              </ul>
+              <nav className='footer__menu'>
+                <ul className='footer__menu-list'>
+                  <li className='footer__menu-item'>FAQ</li>
+                  <li className='footer__menu-item'>공지사항</li>
+                </ul>
+              </nav>
+            </div>
+            <div className='footer__cell'>
+              <p className='footer__tel'>1599-1932</p>
+              <p className='footer__cs'>
+                고객센터 평일 09:00 - 18:00 {`(토/일/공휴일 휴무)`}
+                <br />
+                점심시간 12:00 - 13:00
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
