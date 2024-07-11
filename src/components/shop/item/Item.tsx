@@ -1,13 +1,22 @@
 export interface IItemProps {
+  /** 썸네일 이미지 */
   img: string;
+  /** 상세페이지 링크 */
   link: string;
+  /** 상품명 */
   title: string;
+  /** 가격 */
   price: number;
+  /** 별점 */
   rate: number;
+  /** 리뷰 갯수 */
   reviewCnt: number;
-  discount?: number;
-  brand?: string;
+  /** 좋아요 갯수 */
   like?: number;
+  /** 할인 가격 */
+  discount?: number;
+  /** 브랜드 */
+  brand?: string;
 }
 
 const Item = (props: IItemProps) => {

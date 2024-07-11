@@ -4,6 +4,7 @@ import Header from 'components/header/Header';
 import MainSlide from 'components/slider/MainSlide';
 import Section from 'components/section/Section';
 import Footer from 'components/footer/Footer';
+import { Title } from 'components/section';
 
 function App() {
   return (
@@ -44,10 +45,7 @@ function App() {
         <Section className='best'>
           <div className='img-ticker'></div>
           <div className='cell'>
-            <div className='title__container'>
-              <p className='title__desc'>지금 뜨는 베스트</p>
-              <h2 className='title__text'>Best</h2>
-            </div>
+            <Title text='Best' desc='지금 뜨는 베스트' />
             <ul className='cate'>
               <li className='cate__item'>
                 <button className='cate__btn'>Mobile</button>
@@ -65,14 +63,22 @@ function App() {
             <p className='event__banner-title'>Ready for the cool summer</p>
           </div>
           <div className='event__banner'>
-            <div className='title__container'>
-              <p className='title__desc'>티다문구점 이벤트</p>
-              <h2 className='title__text'>Event</h2>
-            </div>
+            <Title text='Event' desc='티다문구점 이벤트' />
           </div>
         </Section>
+        <Section className='sale'>
+          <Title text='Hot Sale' desc='놓치면 안될 특가 상품' />
+        </Section>
         <Section className='new'>
-          <div className=''></div>
+          <Title text='New Arrival' desc='방금 나온 신제품' />
+        </Section>
+        <Section>
+          <Title text='MD Pick' desc='티다문구점 MD 추천' />
+        </Section>
+        <Section className='bottom-visual'>
+          <h2 className='blind'>비주얼 영역</h2>
+          <div className='bottom-visual__shape'></div>
+          <p className='bottom-visual__text'>Everything coool is here.</p>
         </Section>
       </main>
       <Footer />
