@@ -3,6 +3,7 @@ import logo from 'logo.svg';
 import Header from 'components/header/Header';
 import MainSlide from 'components/slider/MainSlide';
 import Section from 'components/section/Section';
+import Footer from 'components/footer/Footer';
 
 function App() {
   return (
@@ -74,36 +75,7 @@ function App() {
           <div className=''></div>
         </Section>
       </main>
-      <footer className='footer' id='footer'>
-        <div className='footer__inner'>
-          <div className='footer__row'>
-            <div className='footer__cell'>
-              <ul className='footer__link'>
-                <li className='footer__link-item'>
-                  <a href='#'>상품구매약관</a>
-                </li>
-                <li className='footer__link-item'>
-                  <a href='#'>개인정보처리방침</a>
-                </li>
-              </ul>
-              <nav className='footer__menu'>
-                <ul className='footer__menu-list'>
-                  <li className='footer__menu-item'>FAQ</li>
-                  <li className='footer__menu-item'>공지사항</li>
-                </ul>
-              </nav>
-            </div>
-            <div className='footer__cell'>
-              <p className='footer__tel'>1599-1932</p>
-              <p className='footer__cs'>
-                고객센터 평일 09:00 - 18:00 {`(토/일/공휴일 휴무)`}
-                <br />
-                점심시간 12:00 - 13:00
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
