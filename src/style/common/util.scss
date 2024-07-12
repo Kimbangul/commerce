@@ -1,0 +1,42 @@
+@mixin pc-xl {
+  @media (max-width: $size__pc-xl) {
+    @content;
+  }
+}
+
+@mixin mb-lg {
+  @media (max-width: $size__mb-lg) {
+    @content;
+  }
+}
+
+@mixin pc-only {
+  @media (min-width: calc($size__mb-lg + 1px)) {
+    @content;
+  }
+}
+
+@mixin util__flex($jc: flex-start, $ai: stretch, $gap: 0, $dir: row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+  flex-direction: $dir;
+}
+
+@mixin util__absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin util__pseudo($width: 100%, $height: 100%) {
+  content: '';
+  display: block;
+  position: absolute;
+  width: $width;
+  height: $height;
+  left: 0;
+  top: 0;
+}
