@@ -15,7 +15,7 @@ export interface IMenuItem {
 
 export type TMenuList = IMenuItem[];
 
-const thirdMenu: TMenuList[] = [
+export const thirdMenu: TMenuList[] = [
   [{ code: 2001001, title: `아이폰/갤럭시 전모델`, link: '#' }],
   [
     { code: 2002001, title: `유/무선 이어폰`, link: '#' },
@@ -97,7 +97,7 @@ const thirdMenu: TMenuList[] = [
   ],
 ];
 
-const subMenu: TMenuList[] = [
+export const subMenu: TMenuList[] = [
   [
     { code: 1001, title: `Jeongwaja edition X 티다문구점`, link: '#' },
     { code: 1002, title: `Archive`, link: '#' },
@@ -125,7 +125,7 @@ const subMenu: TMenuList[] = [
   ],
 ];
 
-const menu: TMenuList = [
+export const menu: TMenuList = [
   { code: 100, title: '티다 Made', link: '#', sub: subMenu[0] },
   { code: 200, title: 'Mobile', link: '#', sub: subMenu[1] },
   { code: 300, title: 'Life', link: '#', sub: subMenu[2] },

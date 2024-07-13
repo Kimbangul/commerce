@@ -1,0 +1,34 @@
+.blind {
+  font-size: 0;
+  position: absolute;
+  display: block;
+  z-index: -9999;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &.menu-bar {
+    background-image: url(~/public/icon/menu-bar_30.svg);
+  }
+  &.search {
+    background-image: url(~/public/icon/search_30.svg);
+  }
+  &.delivery {
+    background-image: url(~/public/icon/delivery_30.svg);
+  }
+  &.cart {
+    background-image: url(~/public/icon/cart_30.svg);
+  }
+  &.login {
+    background-image: url(~/public/icon/login_30.svg);
+  }
+}
