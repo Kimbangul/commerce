@@ -1,0 +1,71 @@
+:root {
+  // font-size: 10px;
+  // @include pc-xl {
+  //   font-size: 0.520833vw;
+  // }
+  // @include mb-lg {
+  //   font-size: 1.38889vw;
+  // }
+}
+html {
+  width: 100%;
+}
+html,
+body {
+  // background: $color__black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: inherit;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+a,
+img {
+  display: block;
+}
+button {
+  outline: none;
+  appearance: none;
+  border: none;
+}
+body {
+  word-break: keep-all;
+  // font-size: 1.6rem;
+  // font-family: $font__Noto;
+  word-break: keep-all;
+  position: relative;
+  line-height: 1;
+  // background: $color__black;
+  // color: $color__white;
+  width: 100%;
+  overflow-x: hidden;
+}
+input,
+textarea {
+}
+
+main {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // font-family: $font__Noto;
+}
+button {
+  // font-family: $font__Noto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
