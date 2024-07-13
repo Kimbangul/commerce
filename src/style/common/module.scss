@@ -31,4 +31,13 @@
   &.login {
     background-image: url(~/public/icon/login_30.svg);
   }
+  &.top {
+    background-image: url(~/public/icon/top_24.svg);
+    background-size: 2.4rem;
+  }
+  &.copy {
+    background-image: url(~/public/icon/copy_13.svg);
+    width: 1.3rem;
+    height: 1.7rem;
+  }
 }

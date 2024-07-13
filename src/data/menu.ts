@@ -99,7 +99,7 @@ export const thirdMenu: TMenuList[] = [
 
 export const subMenu: TMenuList[] = [
   [
-    { code: 1001, title: `Jeongwaja edition X 티다문구점`, link: '#' },
+    { code: 1001, title: `Jeongwaja edition`, link: '#' },
     { code: 1002, title: `Archive`, link: '#' },
   ],
   [

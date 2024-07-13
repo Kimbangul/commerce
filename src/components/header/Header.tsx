@@ -68,9 +68,11 @@ const Header = () => {
                           key={`subMenu-${subMenu.title}-${idx}`}
                           className='cate__sub-item'
                         >
-                          <span className='cate__sub-name'>
-                            {subMenu.title}
-                          </span>
+                          <a href={subMenu.link}>
+                            <span className='cate__sub-name'>
+                              {subMenu.title}
+                            </span>
+                          </a>
                           {/* depth 3 */}
                           {subMenu.sub && (
                             <div className='cate__third'>
@@ -80,9 +82,11 @@ const Header = () => {
                                     className='cate__third-item'
                                     key={`thirdMenu-${thirdMenu.title}-${idx}`}
                                   >
-                                    <span className='cate__third-name'>
-                                      {thirdMenu.title}
-                                    </span>
+                                    <a href={thirdMenu.link}>
+                                      <span className='cate__third-name'>
+                                        {thirdMenu.title}
+                                      </span>
+                                    </a>
                                   </li>
                                 ))}
                               </ul>

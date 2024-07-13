@@ -1,3 +1,4 @@
+// header
 .header {
   width: 100%;
   position: relative;
@@ -52,6 +53,10 @@
       @include util__flex(center, center, 0, column);
       min-width: 7rem;
     }
+    & > a {
+      position: relative;
+      z-index: 2;
+    }
 
     $color-list: (
       $color__orange,
@@ -68,6 +73,19 @@
         @include util__tag-border($color__orange, $color__black);
       }
     }
+    &:nth-child(2) {
+      .cate__sub-list {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .cate__sub-item {
+        margin-left: 42.3rem;
+        max-width: 12rem;
+        &:first-child {
+          text-transform: uppercase;
+        }
+      }
+    }
     &:nth-child(6) {
       color: nth($color-list, 6);
     }
@@ -78,10 +96,18 @@
     @for $i from 1 through 7 {
       &:nth-child(#{$i}):hover .cate__name {
         @include util__tag-border(nth($color-list, $i), $color__black);
+        animation: animation__shake 0.5s infinite both;
 
         @if $i >= 6 {
           color: $color__white;
         }
+      }
+      &:nth-child(#{$i}) .cate__sub-item a:hover .cate__sub-name {
+        @include util__tag-border(nth($color-list, $i), $color__black);
+      }
+
+      &:nth-child(#{$i}) .cate__third-item a:hover .cate__third-name {
+        @include util__tag-border(nth($color-list, $i), $color__black);
       }
     }
 
@@ -106,7 +132,7 @@
   &__name {
     padding: 0.4rem 0.8rem;
     font-weight: 700;
-    font-family: $font-favorit;
+    font-family: $font__favorit;
     display: inline-block;
   }
   &__sub {
@@ -120,11 +146,114 @@
     background: $color__white-2;
 
     &-list {
-      @include util__flex(flex-start, flex-start);
+      min-width: $size__pc-min;
+      max-width: $size__pc-min;
+      margin: 0 auto;
+      @include util__flex(center, flex-start);
     }
     &-item {
-      padding: 0.4rem 0.8rem;
       font-weight: 600;
+    }
+    &-name {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  &__third {
+    &-item {
+      margin-top: 0.6rem;
+    }
+    &-name {
+      display: inline-block;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 120%;
+      padding: 0.4rem 0.8rem;
     }
   }
 }
+// // header
+// footer
+.footer {
+  min-width: $size__pc-min;
+  background: $color__black-2;
+  color: $color__white;
+  border-radius: 3.2rem 3.2rem 0 0;
+
+  @mixin footer-info-text {
+    color: #666;
+    font-size: 1.4rem;
+    letter-spacing: -0.028rem;
+  }
+
+  &__inner {
+    padding: 2.4rem 3.2rem;
+  }
+  &__row {
+    @include util__flex(space-between, flex-start);
+  }
+  &__link {
+    @include util__flex(flex-start, center, 0.4rem);
+  }
+  &__menu {
+    &-list {
+      @include util__flex(flex-start, flex-start, 0.8rem);
+    }
+  }
+  &__cell {
+    &:nth-child(1) {
+      font-size: 1.4rem;
+    }
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+  &__tel {
+    font-size: 4.6rem;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.092rem;
+    font-family: $font__favorit;
+  }
+  &__cs {
+    @include footer-info-text();
+    line-height: 140%;
+  }
+
+  &__company {
+  }
+
+  &__info {
+    @include footer-info-text();
+
+    & > * {
+      padding: 0.8rem 0;
+    }
+    &-row {
+      @include util__flex(stretch, center, 0.8rem);
+
+      dl {
+        @include util__flex(stretch, center, 0.5ch);
+      }
+    }
+  }
+
+  &__copy {
+    display: inline-flex;
+    gap: 0.4rem;
+    font-size: 1em;
+    padding-bottom: 0;
+    font-family: $font__favorit;
+  }
+}
+
+.top-btn {
+  @extend .icon, .top;
+  padding: 0.8rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 100%;
+  border: 1px solid #666;
+  align-self: flex-end;
+}
+// // footer
