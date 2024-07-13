@@ -40,3 +40,13 @@
   left: 0;
   top: 0;
 }
+
+@mixin util__tag($bgColor) {
+  border-radius: 10rem;
+  background: $bgColor;
+}
+
+@mixin util__tag-border($bgColor, $borderColor) {
+  @include util__tag($bgColor);
+  box-shadow: $borderColor 0 0 0 1px inset;
+}

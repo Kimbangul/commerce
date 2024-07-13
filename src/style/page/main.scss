@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  position: relative;
   &__inner {
     min-width: $size__pc-min;
     max-width: $size__pc-min;
@@ -51,6 +52,44 @@
       @include util__flex(center, center, 0, column);
       min-width: 7rem;
     }
+
+    $color-list: (
+      $color__orange,
+      $color__yellow,
+      $color__pink,
+      $color__skyblue,
+      $color__green,
+      $color__purple,
+      $color__blue
+    );
+
+    &:first-child {
+      .cate__name {
+        @include util__tag-border($color__orange, $color__black);
+      }
+    }
+    &:nth-child(6) {
+      color: nth($color-list, 6);
+    }
+    &:nth-child(7) {
+      color: nth($color-list, 7);
+    }
+
+    @for $i from 1 through 7 {
+      &:nth-child(#{$i}):hover .cate__name {
+        @include util__tag-border(nth($color-list, $i), $color__black);
+
+        @if $i >= 6 {
+          color: $color__white;
+        }
+      }
+    }
+
+    &:hover {
+      .cate__sub {
+        display: flex;
+      }
+    }
   }
   &__icon {
     display: inline-block;
@@ -68,5 +107,24 @@
     padding: 0.4rem 0.8rem;
     font-weight: 700;
     font-family: $font-favorit;
+    display: inline-block;
+  }
+  &__sub {
+    @include util__flex(center);
+    display: none;
+    width: 100%;
+    position: absolute;
+    min-height: 31.2rem;
+    padding-top: 2.4rem;
+    left: 0;
+    background: $color__white-2;
+
+    &-list {
+      @include util__flex(flex-start, flex-start);
+    }
+    &-item {
+      padding: 0.4rem 0.8rem;
+      font-weight: 600;
+    }
   }
 }

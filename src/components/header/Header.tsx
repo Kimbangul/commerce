@@ -1,4 +1,5 @@
 import { menu, img } from 'data';
+import { thirdMenu } from 'data/menu';
 
 const mainNavMenu: menu.TMenuList = [
   { code: 0, title: `Home`, link: `#` },
@@ -58,6 +59,42 @@ const Header = () => {
                   </span>
                   <span className='cate__name'>{el.title}</span>
                 </a>
+                {/* 서브메뉴 */}
+                {el.sub && (
+                  <div className='cate__sub'>
+                    <ul className='cate__sub-list'>
+                      {el.sub.map((subMenu, idx) => (
+                        <li
+                          key={`subMenu-${subMenu.title}-${idx}`}
+                          className='cate__sub-item'
+                        >
+                          <span className='cate__sub-name'>
+                            {subMenu.title}
+                          </span>
+                          {/* depth 3 */}
+                          {subMenu.sub && (
+                            <div className='cate__third'>
+                              <ul className='cate__third-list'>
+                                {subMenu.sub.map((thirdMenu, idx) => (
+                                  <li
+                                    className='cate__third-item'
+                                    key={`thirdMenu-${thirdMenu.title}-${idx}`}
+                                  >
+                                    <span className='cate__third-name'>
+                                      {thirdMenu.title}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                          {/* // depth 3 */}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {/* // 서브메뉴 끝 */}
               </li>
             ))}
           </ul>
