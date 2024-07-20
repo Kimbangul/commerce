@@ -1,5 +1,7 @@
 import 'style/style.scss';
 
+import { register } from 'swiper/element/bundle';
+
 import React from 'react';
 import logo from 'logo.svg';
 import Header from 'components/header/Header';
@@ -9,6 +11,7 @@ import Footer from 'components/footer/Footer';
 import { Title } from 'components/section';
 
 function App() {
+  register();
   return (
     <div className='App'>
       <Header />
