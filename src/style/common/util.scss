@@ -16,6 +16,11 @@
   }
 }
 
+@mixin util__size-pc-max {
+  min-width: $size__pc-min;
+  max-width: $size__pc-min;
+}
+
 @mixin util__flex($jc: flex-start, $ai: stretch, $gap: 0, $dir: row) {
   display: flex;
   justify-content: $jc;
