@@ -181,7 +181,7 @@
   border-radius: 3.2rem 3.2rem 0 0;
 
   @mixin footer-info-text {
-    color: #666;
+    color: $color__gray-3;
     font-size: 1.4rem;
     letter-spacing: -0.028rem;
   }
@@ -194,15 +194,25 @@
   }
   &__link {
     @include util__flex(flex-start, center, 0.4rem);
+
+    &-item {
+      @extend .btn--16;
+      border: 1px solid $color__gray-3;
+    }
   }
   &__menu {
+    @include util__flex(stretch, center);
+    flex-grow: 1;
     &-list {
       @include util__flex(flex-start, flex-start, 0.8rem);
     }
   }
   &__cell {
     &:nth-child(1) {
+      @include util__flex;
+      flex-direction: column;
       font-size: 1.4rem;
+      height: 9.4rem;
     }
     &:nth-child(2) {
       text-align: right;
@@ -221,20 +231,22 @@
   }
 
   &__company {
+    padding-bottom: 0.4rem;
   }
 
   &__info {
     @include footer-info-text();
 
-    & > * {
-      padding: 0.8rem 0;
-    }
     &-row {
       @include util__flex(stretch, center, 0.8rem);
 
       dl {
-        @include util__flex(stretch, center, 0.5ch);
+        @include util__flex(stretch, center, 0.3ch);
       }
+    }
+    &-btn {
+      @extend .btn--14;
+      border: 1px solid $color__gray-3;
     }
   }
 
@@ -244,6 +256,7 @@
     font-size: 1em;
     padding-bottom: 0;
     font-family: $font__favorit;
+    padding: 0.8rem 0;
   }
 }
 
@@ -253,7 +266,7 @@
   width: 4.2rem;
   height: 4.2rem;
   border-radius: 100%;
-  border: 1px solid #666;
+  border: 1px solid $color__gray-3;
   align-self: flex-end;
 }
 // // footer

@@ -47,7 +47,7 @@ const Footer = () => {
 
         <div className='footer__row'>
           <div className='footer__info'>
-            <p className='footer__company'>{`(주)에스케이텔레콤`}</p>
+            <p className='footer__company'>{`에스케이텔레콤(주)`}</p>
             <div className='footer__info-row'>
               <dl>
                 <dt>대표이사/사장</dt>
@@ -65,29 +65,29 @@ const Footer = () => {
                 <dt className='blind'>주소</dt>
                 <dd>서울특별시 중구 을지로 65</dd>
               </dl>
-              <a className='btn' href='#' target='_blank'>
+              <a className='footer__info-btn' href='#' target='_blank'>
                 사업자정보확인
               </a>
             </div>
             <div className='footer__info-row'>
               <p className='footer__company'>{`피에스앤마케팅(주)`}</p>
               <dl>
-                <dt>수탁운영업체 :</dt>
+                <dt>수탁운영업체 : </dt>
                 <dd>서울특별시 마포구 마포대로 144(공덕동, 마포티타운)</dd>
               </dl>
               <dl>
-                <dt>사장</dt>
+                <dt>사장 : </dt>
                 <dd>이종호</dd>
               </dl>
               <dl>
-                <dt>사업자등록번호</dt>
+                <dt>사업자등록번호 : </dt>
                 <dd>104-86-20016</dd>
               </dl>
               <dl>
-                <dt>판매허가번호</dt>
+                <dt>판매허가번호 : </dt>
                 <dd>2020-서울마포-1276</dd>
               </dl>
-              <a className='btn' href='#' target='_blank'>
+              <a className='footer__info-btn' href='#' target='_blank'>
                 사업자정보확인
               </a>
             </div>

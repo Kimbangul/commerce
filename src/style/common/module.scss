@@ -41,3 +41,15 @@
     height: 1.7rem;
   }
 }
+
+.btn {
+  border-radius: 10rem;
+  &--16 {
+    @extend .btn;
+    padding: 1rem 1.6rem;
+  }
+  &--14 {
+    @extend .btn;
+    padding: 0.8rem 1.2rem;
+  }
+}
