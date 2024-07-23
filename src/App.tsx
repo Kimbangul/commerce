@@ -10,6 +10,8 @@ import Section from 'components/section/Section';
 import Footer from 'components/footer/Footer';
 import { Title } from 'components/section';
 
+import {Text1, Text2, Text3} from 'components/svg/editionText';
+
 function App() {
   register();
   return (
@@ -24,7 +26,11 @@ function App() {
           </h2>
           <div className='edition__visual'>
             <p className='blind'>Brand Exclusive Edition</p>
-            <div className='editin__visual-text'></div>
+            <div className='editin__visual-text'>
+              <Text1 />
+              <Text2 />
+              <Text3 />
+            </div>
             <div className='tag'>
               <span className='tag__icon'></span>
               <p className='tag__desc'></p>
