@@ -57,15 +57,7 @@
       z-index: 2;
     }
 
-    $color-list: (
-      $color__orange,
-      $color__yellow,
-      $color__pink,
-      $color__skyblue,
-      $color__green,
-      $color__purple,
-      $color__blue
-    );
+    $color-list: ($color__orange, $color__yellow, $color__pink, $color__skyblue, $color__green, $color__purple, $color__blue);
 
     &:first-child {
       .cate__name {
@@ -173,6 +165,13 @@
 }
 // // header
 
+// section
+.section {
+  @include util__size-pc-max;
+  margin: 0 auto;
+}
+// // section
+
 // main slide
 .main-slider {
   .swiper {
@@ -209,6 +208,21 @@
   }
 }
 // // main slide
+
+// edition
+.edition {
+  margin-top: 8.4rem;
+  &__title {
+    color: $color__black;
+    font-family: $font__suite;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.032rem;
+  }
+}
+// // edition
 
 // footer
 .footer {
