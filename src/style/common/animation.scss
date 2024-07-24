@@ -18,3 +18,12 @@
     transform: rotate(0deg);
   }
 }
+
+@keyframes animation__star-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+}
