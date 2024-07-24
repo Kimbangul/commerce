@@ -10,7 +10,7 @@ import Section from 'components/section/Section';
 import Footer from 'components/footer/Footer';
 import { Title } from 'components/section';
 
-import { Edition } from 'section';
+import { Best, Edition } from 'section';
 
 function App() {
   register();
@@ -20,19 +20,7 @@ function App() {
       <main id='contents'>
         <MainSlide />
         <Edition />
-        <Section className='best'>
-          <div className='img-ticker'></div>
-          <div className='cell'>
-            <Title text='Best' desc='지금 뜨는 베스트' />
-            <ul className='cate'>
-              <li className='cate__item'>
-                <button className='cate__btn'>Mobile</button>
-                <button className='cate__btn'>Life</button>
-                <button className='cate__btn'>Digital</button>
-              </li>
-            </ul>
-          </div>
-        </Section>
+        <Best />
         <Section className='event'>
           <div className='event__banner'>
             <p className='event__banner-title'>Digital life T gift zone</p>

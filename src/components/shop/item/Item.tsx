@@ -11,12 +11,12 @@ export interface IItemProps {
   rate: number;
   /** 리뷰 갯수 */
   reviewCnt: number;
+  /** 브랜드 */
+  brand: string;
   /** 좋아요 갯수 */
   like?: number;
   /** 할인 가격 */
   discount?: number;
-  /** 브랜드 */
-  brand?: string;
 }
 
 const Item = (props: IItemProps) => {
@@ -27,7 +27,9 @@ const Item = (props: IItemProps) => {
   return (
     <li className='item'>
       <div className='item__thumb-container'>
-        <a href={props.link}></a>
+        <a href={props.link}>
+          <img src={props.img} alt='' />
+        </a>
       </div>
       <div className='item__text-container'>
         <h4 className='item__brand'>{props.brand}</h4>

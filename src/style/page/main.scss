@@ -257,8 +257,15 @@
 
   &__visual {
     &-text {
-      height: 27.3rem;
-      padding: 1.4rem 2.2rem;
+      position: relative;
+      &-svg {
+        height: 27.3rem;
+        padding: 1.4rem 2.2rem;
+
+        &[data-svg='2'] {
+          height: 26.4rem;
+        }
+      }
 
       svg {
         width: auto;
@@ -268,8 +275,89 @@
       animation: animation__star-rotate 1s infinite steps(2) both;
     }
   }
+  &__shop {
+    margin-top: 9.6rem;
+  }
+
+  &__subject {
+    width: 57rem;
+    height: 75.9rem;
+    border-radius: 100rem;
+    background: url(~/public/images/edition/bg01.jpg);
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    a {
+      width: 100%;
+      height: 100%;
+    }
+
+    &-title {
+      font-family: $font__favorit;
+      font-size: 4.8rem;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700;
+      color: $color__white;
+      &-box {
+        position: absolute;
+        top: 52.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &-desc {
+      font-family: $font__suite;
+      color: $color__white;
+      font-size: 1.8rem;
+      text-align: center;
+      line-height: 130%;
+      letter-spacing: -0.036rem;
+      font-weight: 600;
+      margin-top: 1.2rem;
+    }
+  }
+}
+
+.tag {
+  @include util__flex(flex-start, center, 0.3rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10rem;
+  padding: 0 1.1rem;
+  height: 3rem;
+
+  &[data-tag='1'] {
+    top: 15%;
+    background: $color__pastel-skyblue;
+  }
+  &[data-tag='2'] {
+    top: 42%;
+    left: 20%;
+    background: $color__orange;
+  }
+  &[data-tag='3'] {
+    top: 60%;
+    left: 40%;
+    background: $color__yellow;
+  }
+
+  &__desc {
+    font-family: $font__suite;
+    font-size: 1.35rem;
+    color: $color__black;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.027rem;
+  }
 }
 // // edition
+
+// best
+.best {
+}
+// // best
 
 // footer
 .footer {
