@@ -32,42 +32,47 @@ const Item = (props: IItemProps) => {
         </a>
       </div>
       <div className='item__text-container'>
-        <h4 className='item__brand'>{props.brand}</h4>
+        <h4 className='item__brand'>
+          <a href='#'>{props.brand}</a>
+        </h4>
         <h3 className='item__title'>
           <a href={props.link}>{props.title}</a>
         </h3>
         {!props.discount ? (
-          <p className='item__price'>{props.price}</p>
+          <p className='item__price'>{props.price.toLocaleString('ko-KR')}</p>
         ) : (
           <>
             <div className='item__discount-box'>
               <p className='item__discount-percent'>{discountPercent}%</p>
-              <p className='item__discount-price'>{props.discount}</p>
+              <p className='item__discount-price'>
+                {props.discount.toLocaleString('ko-KR')}
+              </p>
             </div>
             <p className='item__price'>{props.price}</p>
           </>
         )}
-      </div>
-      <ul className='item__other-info'>
-        <li className='item__other-rate'>
-          <span className='bliend'>평점</span>
-          <span className='item__other-cnt'>
-            {props.rate} <span className='blind'>점</span>
-          </span>
-          <span className='item__other-cnt'>
-            {`(${props.reviewCnt})`}
-            <span className='blind'>건</span>
-          </span>
-        </li>
-        {props.like && (
+        <ul className='item__other-info'>
           <li className='item__other-rate'>
-            <span className='blind'>좋아요</span>
+            <span className='blind'>평점</span>
+            <span className='icon goods'></span>
             <span className='item__other-cnt'>
-              ${props.like} <span className='blind'>개</span>
+              {props.rate} <span className='blind'>점</span>
+            </span>
+            <span className='item__other-cnt'>
+              {`(${props.reviewCnt})`}
+              <span className='blind'>건</span>
             </span>
           </li>
-        )}
-      </ul>
+          {props.like && (
+            <li className='item__other-rate'>
+              <span className='blind'>좋아요</span>
+              <span className='item__other-cnt'>
+                ${props.like} <span className='blind'>개</span>
+              </span>
+            </li>
+          )}
+        </ul>
+      </div>
     </li>
   );
 };

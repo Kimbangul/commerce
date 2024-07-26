@@ -56,6 +56,15 @@
     width: 1.6rem;
     height: 1.7rem;
   }
+  &.goods {
+    background-image: url(~/public/icon/goods.svg);
+    width: 1.2rem;
+    height: 1.2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(0.2rem);
+    background-position: 0 center;
+  }
 }
 
 .btn {
@@ -67,5 +76,64 @@
   &--14 {
     @extend .btn;
     padding: 0.8rem 1.2rem;
+  }
+}
+
+.item {
+  width: 39.3rem;
+  &__thumb-container {
+    height: 52.4rem;
+    background: $color__white-2;
+    border-radius: 0.4rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: contain;
+    }
+  }
+  &__text-container {
+    margin-top: 2.4rem;
+    padding: 0 0.8rem;
+    line-height: 120%;
+    font-weight: 600;
+    color: $color__black;
+  }
+  &__brand {
+    font-family: $font__suite;
+    color: $color__gray-2;
+    font-size: 1.2rem;
+    line-height: 120%;
+    letter-spacing: -0.024rem;
+  }
+  &__title {
+    font-size: 1.4rem;
+    letter-spacing: -0.028rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin: 0.4rem 0 1rem 0;
+  }
+  &__price {
+    font-family: $font__favorit;
+    font-size: 2.2rem;
+    letter-spacing: -0.066rem;
+    line-height: 120%;
+  }
+  &__other {
+    &-rate {
+      height: 2rem;
+      margin: 0.4rem 0;
+      font-family: $font__favorit;
+      color: $color__gray-1;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: -0.021rem;
+      .icon {
+        margin-right: 0.4rem;
+      }
+    }
   }
 }
