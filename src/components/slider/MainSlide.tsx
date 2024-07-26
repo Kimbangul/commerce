@@ -107,7 +107,10 @@ const MainSlide = () => {
       <h2 className='blind'>메인 슬라이드 영역</h2>
       <Swiper className='main-slider__slide-container' {...swiperOption}>
         {slideList.map((el, idx) => (
-          <SwiperSlide className='main-slider__slide'>
+          <SwiperSlide
+            className='main-slider__slide'
+            key={`main-slider-slider-${idx}`}
+          >
             <a href='#'>
               <img
                 className={`main-slider__img`}
