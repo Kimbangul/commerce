@@ -65,6 +65,21 @@
     transform: translateY(0.2rem);
     background-position: 0 center;
   }
+
+  &.prev {
+    display: inline-block;
+    background-image: url(~/public/icon/common.svg);
+    background-position: -15.5rem center;
+    background-repeat: no-repeat;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-size: cover;
+  }
+
+  &.next {
+    @extend .icon, .prev;
+    transform: rotate(180deg);
+  }
 }
 
 .btn {
@@ -76,6 +91,17 @@
   &--14 {
     @extend .btn;
     padding: 0.8rem 1.2rem;
+  }
+
+  &-navigation {
+    width: 42px;
+    height: 42px;
+    background: rgba(221, 221, 221, 0.8);
+    border-radius: 100%;
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
   }
 }
 

@@ -115,16 +115,18 @@ const Edition = () => {
         <div className='edition__shop-list'>
           <div className='edition__navigation'>
             <button
-              className='edition__navigation-prev'
+              className='btn-navigation'
               ref={navigationPrevRef}
+              aria-label='prev'
             >
-              prev
+              <span className='icon prev'></span>
             </button>
             <button
-              className='edition__navigation-next'
+              className='btn-navigation'
+              aria-label='next'
               ref={navigationNextRef}
             >
-              next
+              <span className='icon next'></span>
             </button>
           </div>
           <Swiper {...swiperOption}>
