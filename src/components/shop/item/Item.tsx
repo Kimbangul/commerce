@@ -21,7 +21,7 @@ export interface IItemProps {
 
 const Item = (props: IItemProps) => {
   const discountPercent = props.discount
-    ? Number(((props.price - props.discount) / props.price) * 100).toFixed(0)
+    ? Math.floor(Number(((props.price - props.discount) / props.price) * 100))
     : '0%';
 
   return (
