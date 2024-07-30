@@ -10,7 +10,7 @@ import Section from 'components/section/Section';
 import Footer from 'components/footer/Footer';
 import { Title } from 'components/section';
 
-import { Best, Edition } from 'section';
+import { Best, Edition, Sale } from 'section';
 
 function App() {
   register();
@@ -32,9 +32,7 @@ function App() {
             <Title text='Event' desc='티다문구점 이벤트' />
           </div>
         </Section>
-        <Section className='sale'>
-          <Title text='Hot Sale' desc='놓치면 안될 특가 상품' />
-        </Section>
+        <Sale />
         <Section className='new'>
           <Title text='New Arrival' desc='방금 나온 신제품' />
         </Section>

@@ -330,8 +330,7 @@
     }
   }
   &__navigation {
-    @include util__flex;
-    gap: 0.8rem;
+    @extend .btn-navigation-wrap;
     margin-top: 2rem;
     margin-bottom: 1.6rem;
   }
@@ -434,6 +433,20 @@
   }
 }
 // // best
+
+// sale
+.sale {
+  padding: 0 3.2rem;
+  @extend .best;
+  &__navigation {
+    @extend .btn-navigation-wrap;
+    margin: 2rem 0 3.2rem 0;
+  }
+  .item {
+    width: 34.1rem;
+  }
+}
+// // sale
 
 // footer
 .footer {

@@ -98,10 +98,18 @@
   }
 
   &-navigation {
+    @include util__flex(center, center);
     width: 42px;
     height: 42px;
     background: rgba(221, 221, 221, 0.8);
     border-radius: 100%;
+    &.swiper-button-lock {
+      display: inherit;
+    }
+    &-wrap {
+      @include util__flex;
+      gap: 0.8rem;
+    }
     &:disabled {
       opacity: 0.5;
       cursor: default;
