@@ -2,6 +2,7 @@
 import { Section } from 'components/section';
 import Item, { IItemProps } from 'components/shop/item/Item';
 import { Text1, Text2, Text3 } from 'components/svg/editionText';
+import { Ticker01 } from 'components/svg/ticker';
 import { useRef } from 'react';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperClass, SwiperProps, SwiperSlide } from 'swiper/react';
@@ -101,6 +102,9 @@ const Edition = () => {
         <div className='edition__subject'>
           <a href='#'>
             <div className='edition__subject-title-box'>
+              <div className='edition__ticker'>
+                <Ticker01 />
+              </div>
               <h3 className='edition__subject-title'>
                 Jeongwaja
                 <br />

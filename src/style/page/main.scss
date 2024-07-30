@@ -335,6 +335,20 @@
     margin-top: 2rem;
     margin-bottom: 1.6rem;
   }
+  &__ticker {
+    background: $color__orange;
+    width: 40.5rem;
+    height: 3.6rem;
+    border-radius: 2.4rem;
+    line-height: 4.8rem;
+    margin-top: -6.4rem;
+    margin-bottom: 2.8rem;
+    overflow: hidden;
+
+    .ticker__handler {
+      animation: animation__ticker 3s linear infinite both;
+    }
+  }
 }
 
 .tag {
