@@ -48,7 +48,7 @@ const Item = (props: IItemProps) => {
                 {props.discount.toLocaleString('ko-KR')}
               </p>
             </div>
-            <p className='item__price'>{props.price}</p>
+            <p className='item__price'>{props.price.toLocaleString('ko-KR')}</p>
           </>
         )}
         <ul className='item__other-info'>
@@ -66,8 +66,9 @@ const Item = (props: IItemProps) => {
           {props.like && (
             <li className='item__other-rate'>
               <span className='blind'>좋아요</span>
+              <span className='icon like'></span>
               <span className='item__other-cnt'>
-                ${props.like} <span className='blind'>개</span>
+                {props.like} <span className='blind'>개</span>
               </span>
             </li>
           )}

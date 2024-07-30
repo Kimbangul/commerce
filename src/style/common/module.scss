@@ -65,6 +65,10 @@
     transform: translateY(0.2rem);
     background-position: 0 center;
   }
+  &.like {
+    @extend .icon, .goods;
+    background-position: -3.8rem center;
+  }
 
   &.prev {
     display: inline-block;
@@ -111,6 +115,10 @@
     height: 52.4rem;
     background: $color__white-2;
     border-radius: 0.4rem;
+    a {
+      width: 100%;
+      height: 100%;
+    }
 
     img {
       width: 100%;
@@ -161,5 +169,75 @@
         margin-right: 0.4rem;
       }
     }
+  }
+  &__discount {
+    &-box {
+      @include util__flex(stretch, center, 0.5rem);
+      color: $color__orange;
+      font-family: $font__favorit;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.066rem;
+      line-height: 3rem;
+
+      & + .item__price {
+        font-family: $font__favorit;
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: -0.048rem;
+        color: $color__gray-1;
+        text-decoration: line-through;
+      }
+    }
+    &-percent {
+    }
+    &-price {
+    }
+  }
+}
+
+.title {
+  &__desc {
+    color: $color__black;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.04rem;
+  }
+  &__text {
+    color: #000;
+    font-family: $font__favorit;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.112rem;
+  }
+}
+
+.item-cate {
+  &__item {
+    margin-bottom: 0.8rem;
+
+    $bgColor: ($color__pink, $color__skyblue, $color__green);
+    @for $i from 1 to 4 {
+      &:nth-child(#{$i}) {
+        .item-cate__btn {
+          background: nth($bgColor, $i);
+        }
+      }
+    }
+  }
+  &__btn {
+    font-family: $font__favorit;
+    box-shadow: $color__black 0 0 0 1px inset;
+    border-radius: 2rem;
+    height: 4rem;
+    padding: 1.2rem 1.6rem 1rem 1.4rem;
+    max-width: 25rem;
+    overflow: hidden;
+    font-size: 1.8rem;
+    letter-spacing: -0.036rem;
+    line-height: 100%;
+    font-weight: 600;
   }
 }
