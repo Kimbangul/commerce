@@ -10,7 +10,7 @@ import Section from 'components/section/Section';
 import Footer from 'components/footer/Footer';
 import { Title } from 'components/section';
 
-import { Best, Edition, Sale, Pick, BottomVisual } from 'section';
+import { Best, Edition, Sale, Pick, BottomVisual, NewArrival } from 'section';
 
 function App() {
   register();
@@ -33,9 +33,7 @@ function App() {
           </div>
         </Section>
         <Sale />
-        <Section className='new'>
-          <Title text='New Arrival' desc='방금 나온 신제품' />
-        </Section>
+        <NewArrival />
         <Pick />
         <BottomVisual />
       </main>
