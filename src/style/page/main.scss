@@ -465,6 +465,44 @@
 }
 // // pick
 
+// bottom visual
+.bottom-visual {
+  position: relative;
+  height: 70vh;
+  margin-top: 20rem;
+  margin-bottom: -10rem;
+  &__shape {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32.7rem;
+    height: 32rem;
+    background: url(~/public/images/bottom-visual/bottom-logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  &__text {
+    @include util__flex(center, center);
+    position: absolute;
+    bottom: calc(10% + 27.5vh);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100rem;
+    font-family: $font__favorit;
+    font-size: 6.6rem;
+    letter-spacing: -0.198rem;
+    width: 77.2rem;
+    height: 11.5rem;
+    font-weight: 400;
+    z-index: 1;
+    background: $color__black-2;
+    color: $color__white;
+  }
+}
+// // bottom visual
+
 // footer
 .footer {
   min-width: $size__pc-min;
