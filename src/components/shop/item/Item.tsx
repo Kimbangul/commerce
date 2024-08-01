@@ -63,7 +63,7 @@ const Item = (props: IItemProps) => {
               <span className='blind'>건</span>
             </span>
           </li>
-          {props.like && (
+          {typeof props.like !== 'undefined' && (
             <li className='item__other-rate'>
               <span className='blind'>좋아요</span>
               <span className='icon like'></span>

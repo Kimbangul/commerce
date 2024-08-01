@@ -392,6 +392,9 @@
   }
   .item {
     width: 35.7rem;
+    &__thumb-container {
+      height: 47.6rem;
+    }
     &__brand {
       font-size: 1.4rem;
       font-weight: 600;
@@ -444,9 +447,23 @@
   }
   .item {
     width: 34.1rem;
+
+    &__thumb-container {
+      height: 45.6rem;
+    }
   }
 }
 // // sale
+
+// pick
+.pick {
+  @extend .sale;
+
+  &__navigation {
+    @extend .sale__navigation;
+  }
+}
+// // pick
 
 // footer
 .footer {
