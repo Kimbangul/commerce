@@ -1,6 +1,5 @@
 import { Section, Title } from 'components/section';
 
-import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
@@ -8,9 +7,9 @@ import { SwiperOptions } from 'swiper/types/swiper-options';
 import Item, { IItemProps } from 'components/shop/item/Item';
 
 const swiperOption: SwiperOptions & SwiperProps = {
-  //modules: [Navigation],
   speed: 1000,
-  slidesPerView: 1,
+  slidesPerView: 2,
+  centeredSlides: true,
 };
 const itemData: IItemProps[] = [
   {
