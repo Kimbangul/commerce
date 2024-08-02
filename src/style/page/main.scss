@@ -457,6 +457,39 @@
 
 // new arrival
 .new {
+  @extend .best;
+  padding: 0 3.2rem;
+  margin-top: 18rem;
+  margin-bottom: 18rem;
+  .item {
+    position: relative;
+    width: auto;
+    height: 100%;
+    &__thumb-container {
+      background: transparent;
+      height: 100%;
+    }
+    &__text-container {
+      position: absolute;
+      top: 20%;
+      //left: -10%;
+      width: 36rem;
+      padding: 2rem 1.6rem 2rem 1.6rem;
+      border-radius: 0.8rem;
+      box-shadow: 0 0.6rem 1.6rem 0rem #00000014;
+      background-color: $color__white;
+      cursor: default;
+    }
+  }
+  &__shop {
+    height: 80rem;
+    margin-top: 3.2rem;
+    background: url(~/public/images/new/bg.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: url(~/public/images/new/cursor.png), auto;
+  }
 }
 // // new arrival
 

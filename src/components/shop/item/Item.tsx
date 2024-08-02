@@ -17,6 +17,8 @@ export interface IItemProps {
   like?: number;
   /** 할인 가격 */
   discount?: number;
+  /** thumbnail 링크 없음 여부 */
+  isOnlyThumb?: boolean;
 }
 
 const Item = (props: IItemProps) => {
@@ -27,9 +29,13 @@ const Item = (props: IItemProps) => {
   return (
     <li className='item'>
       <div className='item__thumb-container'>
-        <a href={props.link}>
+        {!props.isOnlyThumb ? (
+          <a href={props.link}>
+            <img src={props.img} alt='' />
+          </a>
+        ) : (
           <img src={props.img} alt='' />
-        </a>
+        )}
       </div>
       <div className='item__text-container'>
         <h4 className='item__brand'>
