@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface IItemProps {
   /** 썸네일 이미지 */
   img: string;
@@ -19,6 +21,8 @@ export interface IItemProps {
   discount?: number;
   /** thumbnail 링크 없음 여부 */
   isOnlyThumb?: boolean;
+  /** badge 여부 */
+  badge?: () => JSX.Element;
 }
 
 const Item = (props: IItemProps) => {
@@ -29,6 +33,7 @@ const Item = (props: IItemProps) => {
   return (
     <li className='item'>
       <div className='item__thumb-container'>
+        {props.badge && props.badge()}
         {!props.isOnlyThumb ? (
           <a href={props.link}>
             <img src={props.img} alt='' />

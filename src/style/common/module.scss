@@ -204,6 +204,22 @@
   }
 }
 
+.badge {
+  @include util__flex(center, center);
+  position: absolute;
+  width: 6.4rem;
+  height: 6.4rem;
+  top: 0.4rem;
+  left: 1.2rem;
+
+  &.limited {
+    img {
+      border-radius: 10rem;
+      transform: rotate(-30deg);
+    }
+  }
+}
+
 .title {
   &__desc {
     color: $color__black;

@@ -8,6 +8,7 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperClass, SwiperProps, SwiperSlide } from 'swiper/react';
 import { SwiperOptions } from 'swiper/types/swiper-options';
 import { NavigationOptions } from 'swiper/types/modules/navigation';
+import { Limited } from 'components/shop/badge';
 
 const tagData = [
   { icon: 'unicorn', desc: '티끌 모아 티다문구점' },
@@ -136,7 +137,7 @@ const Edition = () => {
           <Swiper {...swiperOption}>
             {itemData.map((el, idx) => (
               <SwiperSlide key={`edition-item-${idx}`}>
-                <Item {...el} />
+                <Item {...el} badge={Limited} />
               </SwiperSlide>
             ))}
           </Swiper>
