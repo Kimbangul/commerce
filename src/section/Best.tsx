@@ -1,6 +1,7 @@
 import { Section, Title } from 'components/section';
 import Item, { IItemProps } from 'components/shop/item/Item';
-import { Ticker02 } from 'components/svg/ticker';
+import { Ticker02, FlowTitle } from 'components/svg/ticker';
+import Lottie from 'react-lottie';
 
 const itemData: IItemProps[] = [
   {
@@ -103,12 +104,17 @@ const itemData: IItemProps[] = [
     like: 16,
   },
 ];
+const lottieOption = {
+  oop: true,
+  autoplay: true,
+  animationData: FlowTitle,
+};
 
 const Best = () => {
   return (
     <Section className='best'>
       <div className='img-ticker'>
-        <Ticker02 />
+        <Lottie options={lottieOption} />
       </div>
       <div className='cell'>
         <div className='best__title-container'>
