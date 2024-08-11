@@ -1,5 +1,6 @@
 import { menu, img } from 'data';
 import { subMenu } from 'data/menu';
+import { Text as DecoText } from 'components/svg/menu';
 
 const mainNavMenu: menu.TMenuList = [
   { code: 0, title: `Home`, link: `#` },
@@ -8,11 +9,11 @@ const mainNavMenu: menu.TMenuList = [
   { code: 2, title: `Event`, link: `#` },
 ];
 
-const allMenu  : menu.TMenuList= [
-  {code: 1, title: `티다 Made`, link: `#`, sub:subMenu[0] },
-  {code: 2, title: `Mobile`, link: `#`, sub: subMenu[1]},
-  {code: 3, title: `Life`, link: `#`, sub: subMenu[2]},
-  {code: 4, title: `Digital`, link: `#`, sub: subMenu[3]},
+const allMenu: menu.TMenuList = [
+  { code: 1, title: `티다 Made`, link: `#`, sub: subMenu[0] },
+  { code: 2, title: `Mobile`, link: `#`, sub: subMenu[1] },
+  { code: 3, title: `Life`, link: `#`, sub: subMenu[2] },
+  { code: 4, title: `Digital`, link: `#`, sub: subMenu[3] },
 ];
 
 const Header = () => {
@@ -111,43 +112,46 @@ const Header = () => {
           </ul>
         </nav>
         <nav className='menu'>
-          <ul className='menu__list'>
-            {
-              allMenu.map((el,first)=> {
-                return(
+          <div className='menu__inner'>
+            <ul className='menu__list'>
+              {allMenu.map((el, first) => {
+                return (
                   <li className='menu__item' key={`all-${first}`}>
                     <a href='#'>{el.title}</a>
-                  {
-                    el.sub && 
-                    <>
-                    <ul className='menu__sub'>
-                      {
-                        el.sub.map((submenu, second) => 
-                          <li className='menu__sub-item' key={`all-${first}-${second}`}>
-                            {submenu.title}
-                            {
-                              submenu.sub &&
-                              <ul className='menu__third'>
-                                {
-                                  submenu.sub.map((thirdmenu, third) =>
-                                    <li className='menu__third-item' key={`all-${first}-${second}-${third}`}>
-                                      {thirdmenu.title}
+                    {el.sub && (
+                      <>
+                        <ul className='menu__sub'>
+                          {el.sub.map((submenu, second) => (
+                            <li
+                              className='menu__sub-item'
+                              key={`all-${first}-${second}`}
+                            >
+                              <a href='#'> {submenu.title}</a>
+                              {submenu.sub && (
+                                <ul className='menu__third'>
+                                  {submenu.sub.map((thirdmenu, third) => (
+                                    <li
+                                      className='menu__third-item'
+                                      key={`all-${first}-${second}-${third}`}
+                                    >
+                                      <a href='#'>{thirdmenu.title}</a>
                                     </li>
-                                  )
-                                }
-                              </ul>
-                            }
-                          </li>
-                        )
-                      }
-                    </ul>
-                    </>
-                  }
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
                   </li>
-                )
-              })
-            }
-          </ul>
+                );
+              })}
+            </ul>
+            <div className='menu__deco-text'>
+              <DecoText />
+            </div>
+          </div>
         </nav>
       </div>
     </header>
