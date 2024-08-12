@@ -1,6 +1,7 @@
 import { Section, Title } from 'components/section';
 import Item, { IItemProps } from 'components/shop/item/Item';
-import { Ticker02, FlowTitle } from 'components/svg/ticker';
+import { FlowTitle } from 'components/svg/ticker';
+import { Number } from 'components/shop/badge';
 import Lottie from 'react-lottie';
 
 const itemData: IItemProps[] = [
@@ -134,7 +135,11 @@ const Best = () => {
         <div className='best__shop'>
           <div className='best__category'>
             {itemData.map((el, idx) => (
-              <Item {...el} key={`best-item-${idx}`} />
+              <Item
+                {...el}
+                key={`best-item-${idx}`}
+                badge={<Number number={idx + 1} />}
+              />
             ))}
           </div>
         </div>

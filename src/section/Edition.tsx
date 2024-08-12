@@ -137,7 +137,7 @@ const Edition = () => {
           <Swiper {...swiperOption}>
             {itemData.map((el, idx) => (
               <SwiperSlide key={`edition-item-${idx}`}>
-                <Item {...el} badge={Limited} />
+                <Item {...el} badge={<Limited />} />
               </SwiperSlide>
             ))}
           </Swiper>
