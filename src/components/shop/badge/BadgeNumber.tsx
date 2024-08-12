@@ -7,6 +7,7 @@ const BadgeNumber = (props: IBadgeNumberProps) => {
     <div className='badge number' aria-label={`${props.number}번째 상품`}>
       <div className='badge__inner'>
         <img src='/images/badge/star.gif' alt='' />
+        <span className='badge__text'>{props.number}</span>
       </div>
     </div>
   );

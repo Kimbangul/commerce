@@ -121,6 +121,7 @@
   width: 39.3rem;
   &__thumb-container {
     height: 52.4rem;
+    position: relative;
     background: $color__white-2;
     border-radius: 0.4rem;
     a {
@@ -211,11 +212,29 @@
   height: 6.4rem;
   top: 0.4rem;
   left: 1.2rem;
+  pointer-events: none;
 
   &.limited {
     img {
       border-radius: 10rem;
       transform: rotate(-30deg);
+    }
+  }
+
+  &.number {
+    color: $color__white;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    .badge__inner {
+      position: relative;
+    }
+
+    .badge__text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
     }
   }
 }
