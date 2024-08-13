@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { Digital } from 'components/shop/badge';
 
 export interface IItemProps {
   /** 썸네일 이미지 */
@@ -23,6 +23,8 @@ export interface IItemProps {
   isOnlyThumb?: boolean;
   /** badge 여부 */
   badge?: JSX.Element;
+  /** 디지털 굿즈 여부 */
+  digital?: boolean;
 }
 
 const Item = (props: IItemProps) => {
@@ -34,6 +36,7 @@ const Item = (props: IItemProps) => {
     <li className='item'>
       <div className='item__thumb-container'>
         {props.badge && props.badge}
+        {props.digital && <Digital />}
         {!props.isOnlyThumb ? (
           <a href={props.link}>
             <img src={props.img} alt='' />

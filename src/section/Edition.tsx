@@ -52,6 +52,7 @@ const itemData: IItemProps[] = [
     rate: 5,
     reviewCnt: 3,
     brand: '티다문구점',
+    digital: true,
   },
 ];
 
