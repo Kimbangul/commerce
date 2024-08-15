@@ -14,9 +14,10 @@ const useObserver = <T extends Element>(
   onIntersect?: TObserveEvent,
   option?: IntersectionObserverInit,
   once = false
-): [React.RefObject<T>, boolean] => {
+): [React.RefObject<T>, boolean, number] => {
   const target = useRef<T>(null);
   const [isView, setIsView] = useState(false);
+  const [ratio, setRatio] = useState(0);
 
   // FUNCTION 대상이 화면에서 관찰되는지 체크
   const checkIntersect: IntersectionObserverCallback = useCallback(
@@ -29,6 +30,7 @@ const useObserver = <T extends Element>(
       } else {
         setIsView(false);
       }
+      setRatio(entry.intersectionRatio);
     },
     [onIntersect]
   );
@@ -58,7 +60,7 @@ const useObserver = <T extends Element>(
     once,
   ]);
 
-  return [target, isView];
+  return [target, isView, ratio];
 };
 
 const onIntersectOnce = <T extends Element = Element>(

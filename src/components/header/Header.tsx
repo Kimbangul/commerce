@@ -2,6 +2,7 @@ import { menu, img } from 'data';
 import { subMenu } from 'data/menu';
 import useObserver from 'hooks/useObserver';
 import { Text as DecoText } from 'components/svg/menu';
+import { useEffect, useState } from 'react';
 
 const mainNavMenu: menu.TMenuList = [
   { code: 0, title: `Home`, link: `#` },
@@ -18,7 +19,20 @@ const allMenu: menu.TMenuList = [
 ];
 
 const Header = () => {
-  const [target, isView] = useObserver<HTMLDivElement>();
+  const [target, isView, ratio] = useObserver<HTMLDivElement>();
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    if (!target.current) return;
+    if (isView) {
+      setIsFixed(false);
+      target.current.classList.remove('fixed');
+    } else {
+      setIsFixed(true);
+      target.current.classList.add('fixed');
+    }
+  }, [isView]);
+
   return (
     <header className='header' id='header' ref={target}>
       <div className='header__inner'>
@@ -156,6 +170,53 @@ const Header = () => {
           </div>
         </nav>
       </div>
+      {isFixed && (
+        <div className='header__fix-container'>
+          <div className='header__fix-inner'>
+            <button className='menu-btn'>
+              <span className='icon menu-bar'></span>
+              <span className='blind'>메뉴 열기/닫기</span>
+            </button>
+            <nav className='cate'>
+              <ul className='cate__list'>
+                {mainNavMenu.map((el, idx) => (
+                  <li className='cate__item' key={`mainNav_${idx}`}>
+                    <a href={el.link}>
+                      <span className='cate__name'>{el.title}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <ul className='action-menu'>
+              <li className='action-menu__item'>
+                <a href='#'>
+                  <span className='icon search'></span>
+                  <span className='blind'>검색</span>
+                </a>
+              </li>
+              <li className='action-menu__item'>
+                <a href='#'>
+                  <span className='icon delivery'></span>
+                  <span className='blind'>주문조회</span>
+                </a>
+              </li>
+              <li className='action-menu__item'>
+                <a href='#'>
+                  <span className='icon cart'></span>
+                  <span className='blind'>장바구니</span>
+                </a>
+              </li>
+              <li className='action-menu__item'>
+                <a href='#'>
+                  <span className='icon login'></span>
+                  <span className='blind'>로그인</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

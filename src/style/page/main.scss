@@ -16,6 +16,38 @@
     z-index: 99;
   }
 
+  &__fix {
+    &-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 7.2rem;
+      background: rgba(255, 255, 255, 0.64);
+      backdrop-filter: blur(2rem);
+      box-shadow: 0 0.6rem 0.8rem 0 rgba(0, 0, 0, 0.16);
+      z-index: 5;
+
+      .cate {
+        &__list {
+          gap: 1.2rem;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+      }
+    }
+    &-inner {
+      @extend .header__inner;
+      @extend .header__top;
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      position: relative;
+    }
+  }
+
   .logo {
     order: 1;
     position: absolute;
