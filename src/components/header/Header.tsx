@@ -1,5 +1,6 @@
 import { menu, img } from 'data';
 import { subMenu } from 'data/menu';
+import useObserver from 'hooks/useObserver';
 import { Text as DecoText } from 'components/svg/menu';
 
 const mainNavMenu: menu.TMenuList = [
@@ -17,8 +18,9 @@ const allMenu: menu.TMenuList = [
 ];
 
 const Header = () => {
+  const [target, isView] = useObserver<HTMLDivElement>();
   return (
-    <header className='header' id='header'>
+    <header className='header' id='header' ref={target}>
       <div className='header__inner'>
         <div className='header__top'>
           <h1 className='logo'>

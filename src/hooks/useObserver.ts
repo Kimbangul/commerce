@@ -10,13 +10,11 @@ export type TObserveEvent = (
   observer: IntersectionObserver
 ) => void;
 
-export interface IUseObserverProps {
-  onIntersect?: TObserveEvent;
-  option?: IntersectionObserverInit;
-  once?: false;
-}
-
-const useObserver = <T extends Element>(props: IUseObserverProps) => {
+const useObserver = <T extends Element>(
+  onIntersect?: TObserveEvent,
+  option?: IntersectionObserverInit,
+  once = false
+): [React.RefObject<T>, boolean] => {
   const target = useRef<T>(null);
   const [isView, setIsView] = useState(false);
 
@@ -24,62 +22,64 @@ const useObserver = <T extends Element>(props: IUseObserverProps) => {
   const checkIntersect: IntersectionObserverCallback = useCallback(
     ([entry], observer) => {
       if (entry.isIntersecting) {
-        if (props.onIntersect) {
-          props.onIntersect(entry, observer);
+        if (onIntersect) {
+          onIntersect(entry, observer);
         }
         setIsView(true);
       } else {
         setIsView(false);
       }
     },
-    [props.onIntersect]
+    [onIntersect]
   );
-
-  const onIntersectOnce = <T extends Element = Element>(
-    callback: IntersectionObserverCallback,
-    triggerOnce: boolean,
-    target: React.RefObject<T>
-  ) => {
-    return (
-      entries: IntersectionObserverEntry[],
-      observer: IntersectionObserver
-    ) => {
-      callback(entries, observer);
-
-      if (
-        target.current &&
-        triggerOnce &&
-        !!entries?.some((entry) => entry.isIntersecting)
-      ) {
-        observer.unobserve(target.current);
-      }
-    };
-  };
 
   useEffect(() => {
     let observer: IntersectionObserver;
     if (target.current) {
-      if (props.once)
+      if (once)
         observer = new IntersectionObserver(
           onIntersectOnce<T>(checkIntersect, once, target),
-          { ...props.option }
+          { ...option }
         );
       else
         observer = new IntersectionObserver(checkIntersect, {
-          ...props.option,
+          ...option,
         });
       observer.observe(target.current);
     }
     return () => observer && observer.disconnect();
   }, [
     target,
-    props.option,
-    props.option?.root,
-    props.option?.threshold,
-    props.option?.rootMargin,
+    option,
+    option?.root,
+    option?.threshold,
+    option?.rootMargin,
     checkIntersect,
-    props.once,
+    once,
   ]);
+
+  return [target, isView];
+};
+
+const onIntersectOnce = <T extends Element = Element>(
+  callback: IntersectionObserverCallback,
+  triggerOnce: boolean,
+  target: React.RefObject<T>
+) => {
+  return (
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver
+  ) => {
+    callback(entries, observer);
+
+    if (
+      target.current &&
+      triggerOnce &&
+      !!entries?.some((entry) => entry.isIntersecting)
+    ) {
+      observer.unobserve(target.current);
+    }
+  };
 };
 
 export default useObserver;
