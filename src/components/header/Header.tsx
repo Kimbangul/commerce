@@ -21,7 +21,9 @@ const allMenu: menu.TMenuList = [
 const Header = () => {
   const [target, isView, ratio] = useObserver<HTMLDivElement>();
   const [isFixed, setIsFixed] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // FUNCTION header 고정시키기
   useEffect(() => {
     if (!target.current) return;
     if (isView) {
@@ -33,6 +35,9 @@ const Header = () => {
     }
   }, [isView]);
 
+  // FUNCTION 메뉴 열기 버튼 클릭시
+  const onClickMenuOpener = () => setIsMenuOpen(true);
+
   return (
     <header className='header' id='header' ref={target}>
       <div className='header__inner'>
@@ -42,7 +47,11 @@ const Header = () => {
               <img src='/icon/logo.svg' alt='티다문구점' />
             </a>
           </h1>
-          <button className='menu-btn'>
+          <button
+            type='button'
+            className='menu-btn'
+            onClick={onClickMenuOpener}
+          >
             <span className='icon menu-bar'></span>
             <span className='blind'>메뉴 열기</span>
           </button>
@@ -127,12 +136,16 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-        <Menu />
+        <Menu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
       </div>
       {isFixed && (
         <div className='header__fix-container'>
           <div className='header__fix-inner'>
-            <button className='menu-btn'>
+            <button
+              type='button'
+              className='menu-btn'
+              onClick={onClickMenuOpener}
+            >
               <span className='icon menu-bar'></span>
               <span className='blind'>메뉴 열기/닫기</span>
             </button>

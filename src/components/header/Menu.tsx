@@ -1,11 +1,32 @@
 import { Text as DecoText } from 'components/svg/menu';
 import { menu } from 'data/menu';
+import { useEffect, useRef } from 'react';
 
-const Menu = () => {
+export interface IMenuProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Menu = (props: IMenuProps) => {
+  const menuRef = useRef(null);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    if (props.isOpen) {
+      const linkEl = listRef.current?.querySelector('a');
+      if (!linkEl) return;
+      linkEl.focus();
+    }
+  }, [props.isOpen]);
+
   return (
-    <nav className='menu'>
+    <nav className={props.isOpen ? `menu--open` : `menu`} ref={menuRef}>
       <div className='menu__top'>
-        <button className='menu-btn'>
+        <button
+          className='menu-btn'
+          type='button'
+          onClick={() => props.setIsOpen(false)}
+        >
           <span className='icon close'></span>
           <span className='blind'>메뉴 닫기</span>
         </button>
@@ -37,7 +58,7 @@ const Menu = () => {
         </ul>
       </div>
       <div className='menu__inner'>
-        <ul className='menu__list'>
+        <ul className='menu__list' ref={listRef}>
           {menu.map((el, first) => {
             return (
               <li className='menu__item' key={`all-${first}`}>
