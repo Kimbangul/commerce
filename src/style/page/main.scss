@@ -13,7 +13,7 @@
     margin-bottom: 1.4rem;
     position: relative;
     height: 9.6rem;
-    z-index: 99;
+    z-index: 9;
   }
 
   &__fix {
@@ -66,24 +66,34 @@
 }
 
 .menu {
-  display: none; // TODO
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background: $color__white-2;
   height: 64rem;
   position: fixed;
-  padding-top: 13.4rem;
+  // padding-top: 13.4rem;
   top: 0;
   left: 0;
   z-index: 10;
   border-radius: 0 0 3.2rem 3.2rem;
 
+  &__top {
+    @extend .header__top;
+    max-width: $size__pc-min;
+    min-width: $size__pc-min;
+    padding-top: 2.4rem;
+    margin: 0 auto;
+    margin-bottom: 1.2rem;
+  }
+
   &__inner {
     max-width: $size__pc-min;
     min-width: $size__pc-min;
     margin: 0 auto;
-    height: 100%;
     position: relative;
     padding-left: 12rem;
+    flex-grow: 1;
   }
   &-btn {
     order: 0;

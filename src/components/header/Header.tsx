@@ -1,8 +1,8 @@
 import { menu, img } from 'data';
 import { subMenu } from 'data/menu';
 import useObserver from 'hooks/useObserver';
-import { Text as DecoText } from 'components/svg/menu';
 import { useEffect, useState } from 'react';
+import Menu from 'components/header/Menu';
 
 const mainNavMenu: menu.TMenuList = [
   { code: 0, title: `Home`, link: `#` },
@@ -44,7 +44,7 @@ const Header = () => {
           </h1>
           <button className='menu-btn'>
             <span className='icon menu-bar'></span>
-            <span className='blind'>메뉴 열기/닫기</span>
+            <span className='blind'>메뉴 열기</span>
           </button>
           <ul className='action-menu'>
             <li className='action-menu__item'>
@@ -127,48 +127,7 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-        <nav className='menu'>
-          <div className='menu__inner'>
-            <ul className='menu__list'>
-              {allMenu.map((el, first) => {
-                return (
-                  <li className='menu__item' key={`all-${first}`}>
-                    <a href='#'>{el.title}</a>
-                    {el.sub && (
-                      <>
-                        <ul className='menu__sub'>
-                          {el.sub.map((submenu, second) => (
-                            <li
-                              className='menu__sub-item'
-                              key={`all-${first}-${second}`}
-                            >
-                              <a href='#'> {submenu.title}</a>
-                              {submenu.sub && (
-                                <ul className='menu__third'>
-                                  {submenu.sub.map((thirdmenu, third) => (
-                                    <li
-                                      className='menu__third-item'
-                                      key={`all-${first}-${second}-${third}`}
-                                    >
-                                      <a href='#'>{thirdmenu.title}</a>
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-            <div className='menu__deco-text'>
-              <DecoText />
-            </div>
-          </div>
-        </nav>
+        <Menu />
       </div>
       {isFixed && (
         <div className='header__fix-container'>

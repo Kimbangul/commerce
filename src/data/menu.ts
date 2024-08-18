@@ -131,5 +131,3 @@ export const menu: TMenuList = [
   { code: 300, title: 'Life', link: '#', sub: subMenu[2] },
   { code: 400, title: 'Digital', link: '#', sub: subMenu[3] },
 ];
-
-export const menuColorData = [];
