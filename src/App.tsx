@@ -15,11 +15,13 @@ import {
   NewArrival,
   Event,
 } from 'section';
+import GSAPProvider from 'components/provider/gsap/GSAPProvider';
 
 function App() {
   register();
   return (
-    <div className='App'>
+    <GSAPProvider>
+      <div className='App'>
       <Header />
       <main id='contents'>
         <MainSlide />
@@ -33,6 +35,7 @@ function App() {
       </main>
       <Footer />
     </div>
+    </GSAPProvider>
   );
 }
 
